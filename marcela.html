@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produtora 03 | Fotografia e Vídeo</title>
+  <meta name="description" content="Portfólio profissional de fotografia e vídeo da Produtora 03. Agência especializada em criação de contéudo para empresas e marketing digital." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero" id="inicio">
+	<nav class="navbar">
+      <a class="logo" href="#inicio">PRODUTORA 03</a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html">INÍCIO</a>
+        <a href="index.html#projetos">PROJETOS</a>
+        <a href="#contato">CONTATO</a>
+      </div>
+    </nav>
+
+  <main>
+    
+	<section class="services section-padding" id="contato">
+      <div class="service-copy">
+        <p class="eyebrow">ENSAIO · ARTÍSTICO · FEMININO</p>
+        <h2>Fotografia e vídeo profissional para empresas, marcas e eventos.</h2>
+        <p>Valorize sua imagem, fortaleça sua marca e mostre o seu trabalho com conteúdo visual de alto impacto.</p>
+        <a href="https://wa.me/556791381705?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Produtora%2003%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento" class="outline-button">SOLICITAR ORÇAMENTO</a>
+      </div>
+      <div class="service-image">
+        <img src="source/marcela1.jpg" alt="Fotografia de evento esportivo">
+      </div>
+    </section>
+	
+
+	
+
+    <section class="work section-padding">
+      <h2>Meus trabalhos</h2>
+
+      <div class="work-slider">
+        <button class="slider-arrow prev" aria-label="Imagem anterior">&#10094;</button>
+        <div class="slider-viewport">
+          <div class="slider-track">
+            <article class="slide active">
+              <img src="source/marcela1.jpg" alt="Retrato artístico feminino">
+              <div class="slide-caption"><span>1/6</span><h3>Histórias em cada olhar</h3></div>
+            </article>
+            <article class="slide">
+              <img src="source/marcela2.jpg" alt="Retrato artístico feminino">
+              <div class="slide-caption"><span>2/6</span><h3>Momentos que ficam</h3></div>
+            </article>
+            <article class="slide">
+              <img src="source/marcela3.jpg" alt="Retrato artístico feminino">
+              <div class="slide-caption"><span>3/6</span><h3>Memórias inesquecíveis</h3></div>
+            </article>
+			<article class="slide">
+              <img src="source/marcela4.jpg" alt="Retrato artístico feminino">
+              <div class="slide-caption"><span>4/6</span><h3>Memórias inesquecíveis</h3></div>
+            </article>
+			<article class="slide">
+              <img src="source/marcela5.jpg" alt="Retrato artístico feminino">
+              <div class="slide-caption"><span>5/6</span><h3>Memórias inesquecíveis</h3></div>
+            </article>
+			<article class="slide">
+              <img src="source/marcela6.jpg" alt="Retrato artístico feminino">
+              <div class="slide-caption"><span>6/6</span><h3>Memórias inesquecíveis</h3></div>
+            </article>
+			
+          </div>
+        </div>
+        <button class="slider-arrow next" aria-label="Próxima imagem">&#10095;</button>
+      </div>
+      <div class="slider-dots" aria-label="Navegação do carrossel"></div>
+    </section>
+	
+	
+  </main>
+
+  <footer id="contato">
+    <h2>Vamos criar algo incrível?</h2>
+    <p>Entre em contato e conte um pouco sobre o seu próximo projeto.</p>
+    <a href="https://wa.me/556791381705?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Produtora%2003%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento" class="outline-button">SOLICITAR ORÇAMENTO</a>
+    <div class="footer-bottom">
+      <span>© 2026 PRODUTORA 03</span>
+      <span>Instagram · WhatsApp</span>
+    </div>
+  </footer>
+
+
+<div id="photoLightbox"
+     style="display:none; position:fixed; inset:0; z-index:999999;
+            background:rgba(0,0,0,.96); align-items:center;
+            justify-content:center; padding:20px; box-sizing:border-box;">
+
+    <button id="lightboxClose" type="button"
+            style="position:absolute; top:10px; right:20px;
+                   color:white; background:none; border:0;
+                   font-size:44px; cursor:pointer;">
+        &times;
+    </button>
+
+    <img id="lightboxImage" src="" alt=""
+         style="max-width:96vw; max-height:92vh; width:auto;
+                height:auto; object-fit:contain;">
+</div>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const lightbox = document.getElementById("photoLightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const closeButton = document.getElementById("lightboxClose");
+
+    // Verifica se os elementos existem
+    if (!lightbox || !lightboxImage || !closeButton) {
+        console.error("Erro: confira o HTML da visualização ampliada.");
+        return;
+    }
+
+    // Permite clicar nas fotos do carrossel
+    document.querySelectorAll(".slide img").forEach(function (img) {
+        img.addEventListener("click", function () {
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt || "Foto ampliada";
+
+            lightbox.style.setProperty("display", "flex", "important");
+            document.body.style.overflow = "hidden";
+        });
+    });
+
+    function fecharFoto() {
+        lightbox.style.setProperty("display", "none", "important");
+        lightboxImage.src = "";
+        document.body.style.overflow = "";
+    }
+
+    closeButton.addEventListener("click", fecharFoto);
+
+    lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+            fecharFoto();
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            fecharFoto();
+        }
+    });
+
+    console.log("Visualização ampliada carregada.");
+});
+</script>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
